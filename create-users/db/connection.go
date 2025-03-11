@@ -4,13 +4,14 @@ package db
 import (
 	"database/sql"
 	"log"
+	"os"
 
 	_ "github.com/lib/pq"
 )
 
 func ConnectDB() (*sql.DB, error) {
-	//dbURL := os.Getenv("DATABASE_URL")
-	const dbURL = "postgres://postgres:postgres@postgres.czw08msma20l.eu-central-1.rds.amazonaws.com:5432/postgres"
+	dbURL := os.Getenv("DATABASE_URL")
+
 	if dbURL == "" {
 		log.Fatal("DATABASE_URL is required")
 	}
