@@ -1,0 +1,12 @@
+# create-users/k8s/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: create-users
+spec:
+  selector:
+    app: create-users
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8082

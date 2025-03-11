@@ -1,0 +1,12 @@
+# retrieve-users/k8s/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: retrieve-users
+spec:
+  selector:
+    app: retrieve-users
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8081
